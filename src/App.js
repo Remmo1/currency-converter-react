@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import countryList from './countryList';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCoffee, faRightLeft } from '@fortawesome/free-solid-svg-icons'
 
 const App = () => {
   const [amount, setAmount] = useState(1);
@@ -73,7 +75,7 @@ const App = () => {
               </select>
             </div>
           </div>
-          <div className="icon" onClick={swapCurrencies}><i className="fas fa-exchange-alt"></i></div>
+          <div className="icon" onClick={swapCurrencies}><FontAwesomeIcon onClick={swapCurrencies} icon={faRightLeft} /></div>
           <div className="to">
             <p>To</p>
             <div className="select-box">
@@ -89,6 +91,7 @@ const App = () => {
         <div className="exchange-rate">{exchangeRate ? `${amount} ${fromCurrency} = ${exchangeRate} ${toCurrency}` : 'Getting exchange rate...'}</div>
         <button onClick={getExchangeRate}>Get Exchange Rate</button>
       </form>
+      <script src="https://kit.fontawesome.com/7070b0c049.js" crossorigin="anonymous"></script>
     </div>
   );
 };
