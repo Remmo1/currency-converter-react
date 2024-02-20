@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 
 const useExchangeRate = (fromCurrency, toCurrency, amount) => {
   const [exchangeRate, setExchangeRate] = useState(null);
-  const backendUrl = 'http://localhost:8080/exchange';
+  const backendUrl = process.env.REACT_APP_BACKEND_URL;
 
   useEffect(() => {
     const getExchangeRate = async () => {
