@@ -14,7 +14,9 @@ const App = () => {
   const exchangeRate = useExchangeRate(fromCurrency, toCurrency, amount);
 
   const handleAmountChange = (e) => {
-    setAmount(e.target.value);
+    if (/^\d*\.?\d*$/.test(e.target.value)) {
+      setAmount(e.target.value);
+    }
   };
 
   const handleCurrencyChange = (e) => {
